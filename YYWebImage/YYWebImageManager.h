@@ -273,7 +273,7 @@ typedef void (^YYWebImageCompletionBlock)(UIImage * _Nullable image,
  @param url A specified URL
  @return Cache key used in YYImageCache.
  */
-- (NSString *)cacheKeyForURL:(NSURL *)url;
+- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(NSString *)transformKey;
 
 
 /**

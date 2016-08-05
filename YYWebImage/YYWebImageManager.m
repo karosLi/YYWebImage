@@ -117,12 +117,11 @@ static UIApplication *_YYSharedApplication() {
     return _headersFilter ? _headersFilter(url, _headers) : _headers;
 }
 
-- (NSString *)cacheKeyForURL:(NSURL *)url {
+- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(NSString *)transformKey {
     if (!url) return nil;
-    return _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
+    NSString *cacheKey = _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
+    return [NSString stringWithFormat:@"%@%@", cacheKey, transformKey];
 }
-
-
 
 #pragma mark Network Indicator
 
