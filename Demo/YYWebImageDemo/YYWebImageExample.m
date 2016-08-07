@@ -98,14 +98,15 @@
                               }
                           }
                           transform:nil
-                          completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
-                              if (stage == YYWebImageStageFinished) {
-                                  _self.progressLayer.hidden = YES;
-                                  [_self.indicator stopAnimating];
-                                  _self.indicator.hidden = YES;
-                                  if (!image) _self.label.hidden = NO;
-                              }
-                         }];
+                       transformKey:nil
+                           completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
+                               if (stage == YYWebImageStageFinished) {
+                                   _self.progressLayer.hidden = YES;
+                                   [_self.indicator stopAnimating];
+                                   _self.indicator.hidden = YES;
+                                   if (!image) _self.label.hidden = NO;
+                               }
+                           }];
 }
 
 - (void)prepareForReuse {
