@@ -123,9 +123,9 @@ static UIApplication *_YYSharedApplication() {
     if (!url) return nil;
     NSString *cacheKey = _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
     if (transformKey)
-        return cacheKey;
-    else
         return [NSString stringWithFormat:@"%@--%@", cacheKey, transformKey];
+    else
+        return cacheKey;
 }
 
 #pragma mark Network Indicator
