@@ -119,7 +119,7 @@ static UIApplication *_YYSharedApplication() {
     return _headersFilter ? _headersFilter(url, _headers) : _headers;
 }
 
-- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(NSString *)transformKey {
+- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(nullable NSString *)transformKey {
     if (!url) return nil;
     NSString *cacheKey = _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
     if (transformKey)
